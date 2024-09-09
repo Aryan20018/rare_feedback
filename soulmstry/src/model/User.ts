@@ -30,6 +30,8 @@ export interface User extends Document{
 
 
 }
+
+
 const UserSchema: Schema<User> = new Schema({
     username:{
         type: String,
@@ -42,7 +44,6 @@ const UserSchema: Schema<User> = new Schema({
         required:[true ,"Email is required"],
         unique: true,
         match: [/.+\@.+\..+/,'please use a vaild email address']
-
     },
     password:{
         type: String,
@@ -65,7 +66,6 @@ const UserSchema: Schema<User> = new Schema({
        default:false,
     },
     message:[MessageSchema]
-
 })
 
 const UserModel = (mongoose.models.User as mongoose.Model<User>) || mongoose.model<User>("User", UserSchema)
