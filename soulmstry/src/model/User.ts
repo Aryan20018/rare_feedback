@@ -27,8 +27,6 @@ export interface User extends Document{
    isVerified:boolean;
    isAcceptingMessage: boolean;
    message: Message[]
-
-
 }
 
 
